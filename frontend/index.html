@@ -13,9 +13,9 @@
   };
 
   function setHello () {
-    window.fetch('/hello').then((res) => {
+    window.fetch('/hello').then(function (res) {
       return res.text();
-    }).then((val) => {
+    }).then(function (val) {
       const h1 = document.getElementsByTagName('h1')[0];
       h1.innerHTML = val + h1.innerHTML;
     });
