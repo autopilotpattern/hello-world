@@ -1,5 +1,8 @@
 FROM mhart/alpine-node:latest
 
+RUN apk update && \
+    apk add curl
+
 # Install ContainerPilot
 ENV CONTAINERPILOT_VERSION 2.4.1
 RUN export CP_SHA1=198d96c8d7bfafb1ab6df96653c29701510b833c \

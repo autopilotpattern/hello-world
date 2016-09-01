@@ -3,8 +3,8 @@
   "services": [
     {
       "name": "hello",
-      "port": 3000,
-      "health": "/usr/bin/curl -o /dev/null --fail -s http://localhost:3000/",
+      "port": 3001,
+      "health": "/usr/bin/curl -o /dev/null --fail -s http://localhost:3001/",
       "poll": 3,
       "ttl": 10
     }

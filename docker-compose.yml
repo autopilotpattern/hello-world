@@ -1,0 +1,20 @@
+frontend:
+    build: frontend/
+    ports:
+      - "80:80"
+    links:
+      - consul:consul
+    restart: always
+    command: >
+      /bin/containerpilot -config file:///etc/containerpilot/containerpilot.json
+      nginx -g "daemon off;"
+hello:
+    build: hello/
+    links:
+      - consul:consul
+consul:
+    image: progrium/consul:latest
+    command: -server -bootstrap -ui-dir /ui
+    restart: always
+    expose:
+      - "8500"
