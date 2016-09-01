@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <h1></h1>
+</body>
+<script>
+  window.onload = function () {
+    setHello();
+  };
+
+  function setHello () {
+    window.fetch('/hello').then((res) => {
+      return res.text();
+    }).then((val) => {
+      const h1 = document.getElementsByTagName('h1')[0];
+      h1.innerHTML = val + h1.innerHTML;
+    });
+  }
+</script>
+</html>
