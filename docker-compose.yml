@@ -12,6 +12,10 @@ hello:
     build: hello/
     links:
       - consul:consul
+world:
+    build: world/
+    links:
+      - consul:consul
 consul:
     image: progrium/consul:latest
     command: -server -bootstrap -ui-dir /ui

@@ -20,6 +20,11 @@
       "name": "hello",
       "poll": 3,
       "onChange": "/bin/reload-nginx.sh onChange"
+    },
+    {
+      "name": "world",
+      "poll": 3,
+      "onChange": "/bin/reload-nginx.sh onChange"
     }
   ]
 }

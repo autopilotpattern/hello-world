@@ -32,6 +32,15 @@ http {
         least_conn;
     }{{ end }}
 
+    {{ if service "world" }}
+    upstream world {
+        # write the address:port pairs for each healthy World node
+        {{range service "world"}}
+        server {{.Address}}:{{.Port}};
+        {{end}}
+        least_conn;
+    }{{ end }}
+
     server {
         listen       80;
         server_name  _;
@@ -51,6 +60,15 @@ http {
             # it along to the Hello upstream
             rewrite ^/hello(/.*)$ $1 break;
             proxy_pass http://hello;
+            proxy_redirect off;
+        }{{end}}
+
+        {{ if service "world" }}
+        location ^~ /world {
+            # strip '/world' from the request before passing
+            # it along to the World upstream
+            rewrite ^/world(/.*)$ $1 break;
+            proxy_pass http://world;
             proxy_redirect off;
         }{{end}}
     }
