@@ -3,13 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <h1></h1>
+  <section class="wrapper">
+    <h1></h1>
+    <h2></h2>
+  </section>
 </body>
 <script>
   window.onload = function () {
     setHello();
+    setWorld();
   };
 
   function setHello () {
@@ -18,6 +23,15 @@
     }).then(function (val) {
       const h1 = document.getElementsByTagName('h1')[0];
       h1.innerHTML = val + h1.innerHTML;
+    });
+  }
+
+  function setWorld () {
+    window.fetch('/world').then(function (res) {
+      return res.text();
+    }).then(function (val) {
+      const h2 = document.getElementsByTagName('h2')[0];
+      h2.innerHTML = val + h2.innerHTML;
     });
   }
 </script>
