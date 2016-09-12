@@ -13,6 +13,6 @@ The application is divided into 4 parts:
 3. Hello - Node.js service responding with the word "Hello"
 4. Hello - Node.js service responding with the word "World"
 
-![hello-world diagram](hello-world.png)
+![application configuration diagram](application-diagram.jpg)
 
 
