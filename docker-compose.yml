@@ -1,5 +1,5 @@
-frontend:
-    build: frontend/
+nginx:
+    build: nginx/
     ports:
       - "80:80"
     links:
