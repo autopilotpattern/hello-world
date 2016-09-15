@@ -19,7 +19,7 @@ RUN export CP_SHA1=198d96c8d7bfafb1ab6df96653c29701510b833c && \
     rm /tmp/containerpilot.tar.gz
 
 COPY containerpilot.json /etc/containerpilot/
-COPY reload-nginx.sh /bin
+COPY reload-nginx.sh /bin/
 COPY index.html /usr/share/nginx/html/
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY nginx.conf.ctmpl /etc/containerpilot/
