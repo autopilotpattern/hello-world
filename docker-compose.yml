@@ -20,5 +20,5 @@ consul:
     image: autopilotpattern/consul:latest
     command: -server -bootstrap -ui-dir /ui
     restart: always
-    expose:
+    ports:
       - "8500:8500"
