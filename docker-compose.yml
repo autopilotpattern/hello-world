@@ -17,8 +17,8 @@ world:
     links:
       - consul:consul
 consul:
-    image: progrium/consul:latest
+    image: autopilotpattern/consul:latest
     command: -server -bootstrap -ui-dir /ui
     restart: always
     expose:
-      - "8500"
+      - "8500:8500"
