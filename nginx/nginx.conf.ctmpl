@@ -1,3 +1,4 @@
+daemon off;
 user  nginx;
 worker_processes  1;
 

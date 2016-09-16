@@ -1,4 +1,4 @@
-# Hello World on Autopilot
+# Hello World using the Autopilot Pattern
 
 1. `git clone git@github.com:autopilotpattern/hello-world.git`
 2. `cd hello-world`
@@ -16,3 +16,9 @@ The application is divided into 4 parts:
 
 
 ![application configuration diagram](application-diagram.jpg)
+
+
+# Hello World running on Triton
+
+1. `./triton-docker-setup.sh -k us-east-1.api.joyent.com <ACCOUNT> ~/.ssh/<PRIVATE_KEY_FILE>`
+2. `docker-compose up -d`
