@@ -5,7 +5,7 @@
 const Code = require('code');
 const Lab = require('lab');
 const Wreck = require('wreck');
-const Hello = require('../');
+const World = require('../');
 
 
 // Test shortcuts
