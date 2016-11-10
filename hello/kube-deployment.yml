@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello
+  namespace: hello-world
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: hello
+    spec:
+      containers:
+      - image: gcr.io/jackzampolin-web/hello
+        imagePullPolicy: Always
+        name: hello
+        ports:
+        - containerPort: 3002
