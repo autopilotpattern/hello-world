@@ -22,3 +22,5 @@ The application is divided into 4 parts:
 
 1. `./triton-docker-setup.sh -k us-east-1.api.joyent.com <ACCOUNT> ~/.ssh/<PRIVATE_KEY_FILE>`
 2. `docker-compose up -d`
+
+![screenshot](sceenshot_helloworld.png)
