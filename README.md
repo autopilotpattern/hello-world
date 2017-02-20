@@ -1,6 +1,6 @@
 # Hello World using the Autopilot Pattern
 
-1. `git clone git@github.com:autopilotpattern/hello-world.git`
+1. `https://github.com/kscherban/hello-world.git`
 2. `cd hello-world`
 3. `docker-compose up -d`
 4. `open http://localhost`
