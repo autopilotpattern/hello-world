@@ -2,7 +2,7 @@
   "consul": "consul:8500",
   "services": [
     {
-      "name": “goodbye”,
+      "name": "goodbye",
       "port": 3001,
       "health": "/usr/bin/curl -o /dev/null --fail -s http://localhost:3001/",
       "poll": 3,

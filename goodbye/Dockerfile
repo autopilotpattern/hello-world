@@ -18,7 +18,7 @@ ENV CONTAINERPILOT=file:///etc/containerpilot.json
 
 
 # Install our application
-COPY index.js /opt/hello/
+COPY index.js /opt/goodbye/
 
 EXPOSE 3001
-CMD ["/bin/containerpilot", "node", "/opt/hello/index.js"]
+CMD ["/bin/containerpilot", "node", "/opt/goodbye/index.js"]
