@@ -17,7 +17,7 @@
   ],
   "backends": [
     {
-      "name": "hello",
+      "name": “goodbye”,
       "poll": 3,
       "onChange": "/bin/reload-nginx.sh onChange"
     },
