@@ -22,3 +22,11 @@ The application is divided into 4 parts:
 
 1. `./triton-docker-setup.sh -k us-east-1.api.joyent.com <ACCOUNT> ~/.ssh/<PRIVATE_KEY_FILE>`
 2. `docker-compose up -d`
+
+`docker-compose` spins up 4 containers. 3 of them are built out of repository. They are nginx, hello, and world. All of three are managed by [ContainerPilot](https://www.joyent.com/containerpilot) for application orchestration, health checks and easy service discovery.
+They are registered in [Consul](https://www.consul.io/)
+
+![result](result.png)
+
+![consul](consul.png)
+
