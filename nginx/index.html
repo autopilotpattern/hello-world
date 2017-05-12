@@ -9,12 +9,14 @@
   <section class="wrapper">
     <h1></h1>
     <h2></h2>
+    <h3></h3>
   </section>
 </body>
 <script>
   window.onload = function () {
     setHello();
     setWorld();
+    setGoodbye();
   };
 
   function setHello () {
@@ -34,5 +36,17 @@
       h2.innerHTML = val + h2.innerHTML;
     });
   }
+
+  function setGoodbye () {
+    window.fetch('/goodbye').then(function (res) {
+      return res.text();
+    }).then(function (val) {
+      const h3 = document.getElementsByTagName('h3')[0];
+      h3.innerHTML = val + h3.innerHTML;
+    });
+  }
+
+
+
 </script>
 </html>

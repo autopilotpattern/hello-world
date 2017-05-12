@@ -42,6 +42,17 @@ http {
         least_conn;
     }{{ end }}
 
+    {{ if service "goodbye" }}
+    upstream goodbye {
+        # write the address:port pairs for each healthy Goodbye node
+        {{range service "goodbye"}}
+        server {{.Address}}:{{.Port}};
+        {{end}}
+        least_conn;
+    }{{ end }}
+
+
+
     server {
         listen       80;
         server_name  _;
@@ -72,5 +83,15 @@ http {
             proxy_pass http://world;
             proxy_redirect off;
         }{{end}}
+
+        {{ if service "goodbye" }}
+        location ^~ /goodbye {
+            # strip '/godbye' from the request before passing
+            # it along to the World upstream
+            rewrite ^/goodbye(/.*)$ $1 break;
+            proxy_pass http://goodbye;
+            proxy_redirect off;
+        }{{end}}
+
     }
 }

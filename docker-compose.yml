@@ -9,6 +9,10 @@ hello:
     build: hello/
     links:
       - consul:consul
+goodbye:
+    build: goodbye/
+    links:
+      - consul:consul
 world:
     build: world/
     links:
