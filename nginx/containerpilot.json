@@ -25,6 +25,11 @@
       "name": "world",
       "poll": 3,
       "onChange": "/bin/reload-nginx.sh onChange"
+    },
+    {
+      "name": "goodbye",
+      "poll": 3,
+      "onChange": "/bin/reload-nginx.sh onChange"
     }
   ]
 }
