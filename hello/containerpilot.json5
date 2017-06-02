@@ -1,0 +1,15 @@
+{
+  consul: "consul:8500",
+  jobs: [
+    {
+      name: "hello",
+      exec: "node /opt/hello/index.js",
+      port: 3001,
+      health: {
+        exec: "/usr/bin/curl -o /dev/null --fail -s http://localhost:3001/",
+        interval: 3,
+        ttl: 10
+      }
+    }
+  ]
+}
