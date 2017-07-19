@@ -1,20 +1,22 @@
-nginx:
-    build: nginx/
-    ports:
-      - "80:80"
-    links:
-      - consul:consul
-    restart: always
-hello:
-    build: hello/
-    links:
-      - consul:consul
-world:
-    build: world/
-    links:
-      - consul:consul
-consul:
-    image: consul:latest
-    restart: always
-    ports:
-      - "8500:8500"
+version: "3"
+services:
+    nginx:
+        build: nginx/
+        ports:
+          - "80:80"
+        links:
+          - consul:consul
+        restart: always
+    hello:
+        build: hello/
+        links:
+          - consul:consul
+    world:
+        build: world/
+        links:
+          - consul:consul
+    consul:
+        image: consul:latest
+        restart: always
+        ports:
+          - "8500:8500"
