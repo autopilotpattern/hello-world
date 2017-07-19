@@ -11,10 +11,10 @@ RUN curl -Lo /tmp/consul_template_0.15.0_linux_amd64.zip https://releases.hashic
     mv consul-template /bin
 
 # Install ContainerPilot
-ENV CONTAINERPILOT_VER 3.0.0
+ENV CONTAINERPILOT_VER 3.3.0
 ENV CONTAINERPILOT /etc/containerpilot.json5
 
-RUN export CONTAINERPILOT_CHECKSUM=6da4a4ab3dd92d8fd009cdb81a4d4002a90c8b7c \
+RUN export CONTAINERPILOT_CHECKSUM=62621712ef6ba755e24805f616096de13e2fd087 \
     && curl -Lso /tmp/containerpilot.tar.gz \
          "https://github.com/joyent/containerpilot/releases/download/${CONTAINERPILOT_VER}/containerpilot-${CONTAINERPILOT_VER}.tar.gz" \
     && echo "${CONTAINERPILOT_CHECKSUM}  /tmp/containerpilot.tar.gz" | sha1sum -c \
