@@ -5,7 +5,7 @@
 preStart() {
     consul-template \
         -once \
-        -consul consul:8500 \
+        -consul-addr consul:8500 \
         -template "/etc/containerpilot/nginx.conf.ctmpl:/etc/nginx/nginx.conf"
 }
 
@@ -14,7 +14,7 @@ preStart() {
 onChange() {
     consul-template \
         -once \
-        -consul consul:8500 \
+        -consul-addr consul:8500 \
         -template "/etc/containerpilot/nginx.conf.ctmpl:/etc/nginx/nginx.conf:nginx -s reload"
 }
 

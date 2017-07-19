@@ -6,8 +6,8 @@ RUN apk update && \
     rm -rf /var/cache/apk/*
 
 # Use consul-template to re-write our Nginx virtualhost config
-RUN curl -Lo /tmp/consul_template_0.15.0_linux_amd64.zip https://releases.hashicorp.com/consul-template/0.15.0/consul-template_0.15.0_linux_amd64.zip && \
-    unzip /tmp/consul_template_0.15.0_linux_amd64.zip && \
+RUN curl -Lo /tmp/consul_template_0.19.0_linux_amd64.zip https://releases.hashicorp.com/consul-template/0.19.0/consul-template_0.19.0_linux_amd64.zip && \
+    unzip /tmp/consul_template_0.19.0_linux_amd64.zip && \
     mv consul-template /bin
 
 # Install ContainerPilot
