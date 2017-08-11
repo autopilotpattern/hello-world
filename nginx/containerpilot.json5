@@ -26,10 +26,10 @@
       }
     },
     {
-      name: "onchange-hello",
+      name: "onchange-goodbye",
       exec: "/bin/reload-nginx.sh onChange",
       when: {
-        source: "watch.hello",
+        source: "watch.goodbye",
         each: "changed"
       }
     },
@@ -44,7 +44,7 @@
   ],
   watches: [
     {
-      name: "hello",
+      name: "goodbye",
       interval: 3
     },
     {

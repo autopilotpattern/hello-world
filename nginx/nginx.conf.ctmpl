@@ -24,10 +24,10 @@ http {
     keepalive_timeout  65;
 
 
-    {{ if service "hello" }}
-    upstream hello {
+    {{ if service "goodbye" }}
+    upstream goodbye {
         # write the address:port pairs for each healthy Hello node
-        {{range service "hello"}}
+        {{range service "goodbye"}}
         server {{.Address}}:{{.Port}};
         {{end}}
         least_conn;
@@ -55,12 +55,12 @@ http {
             deny all;
         }
 
-        {{ if service "hello" }}
-        location ^~ /hello {
-            # strip '/hello' from the request before passing
+        {{ if service "goodbye" }}
+        location ^~ /goodbye {
+            # strip '/goodbye' from the request before passing
             # it along to the Hello upstream
-            rewrite ^/hello(/.*)$ $1 break;
-            proxy_pass http://hello;
+            rewrite ^/goodbye(/.*)$ $1 break;
+            proxy_pass http://goodbye;
             proxy_redirect off;
         }{{end}}
 
