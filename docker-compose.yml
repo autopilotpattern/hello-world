@@ -5,8 +5,8 @@ nginx:
     links:
       - consul:consul
     restart: always
-hello:
-    build: hello/
+goodbye:
+    build: goodbye/
     links:
       - consul:consul
 world:
