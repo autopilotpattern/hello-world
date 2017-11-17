@@ -28,7 +28,6 @@ ENV CONTAINERPILOT=/etc/containerpilot.json5
 COPY reload-nginx.sh /bin/
 COPY index.html /usr/share/nginx/html/
 COPY style.css /usr/share/nginx/html/
-COPY nginx.conf /etc/nginx/nginx.conf
 COPY nginx.conf.ctmpl /etc/containerpilot/
 
 EXPOSE 80
